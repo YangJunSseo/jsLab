@@ -21,8 +21,11 @@ window.onload=function(){
  /*④ 마우스가 없을 경우 키보드 [tab]키를 사용해 이용할
   수 있도록 키보드 대응하는 이벤트 onfocus를 추가하였습니다.*/
   var btn4=document.getElementById("btn4");
-  
+  btn4.onmouseover=btn4.onfocus=function(){ colorBg(); }
 }
+ 
+  
+
 //]]>
 </script>
 </head>
