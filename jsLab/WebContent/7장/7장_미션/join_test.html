@@ -24,6 +24,9 @@
 
 		$("form").submit(function() {
 			var tel1_pattern = /(^01[016789]$)/; //정규식
+			var tel2_pattern = /^\d{3,4}$/;
+			var tel3_pattern = /^\d{4}$/;
+			var email_pattern = /^[a-zA-Z0-9_\.\-] + @[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
 			if ($("#id").val() == "") {
 				alert("아이디를 꼭 입력하세요!");
@@ -31,7 +34,17 @@
 				return false;
 			}
 			
+			if ($("#pwd").val() ! = $("pwd2").val()){
+				alert("비밀번호를 확인해 주십시오.");
+				$("pwd").focus();
+				return false;
+			}
 			
+			
+			
+			
+			
+	
 			
 			
 			
