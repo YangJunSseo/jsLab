@@ -20,39 +20,94 @@
 
 <script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document)
+			.ready(
+					function() {
 
-		$("form").submit(function() {
-			var tel1_pattern = /(^01[016789]$)/; //정규식
-			var tel2_pattern = /^\d{3,4}$/;
-			var tel3_pattern = /^\d{4}$/;
-			var email_pattern = /^[a-zA-Z0-9_\.\-] + @[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+						$("form")
+								.submit(
+										function() {
+											var tel1_pattern = /(^01[016789]$)/; //정규식
+											var tel2_pattern = /^\d{3,4}$/;
+											var tel3_pattern = /^\d{4}$/;
+											var email_pattern = /^[a-zA-Z0-9_\.\-] + @[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
 
-			if ($("#id").val() == "") {
-				alert("아이디를 꼭 입력하세요!");
-				$("#id").focus();
-				return false;
-			}
-			
-			if ($("#pwd").val() ! = $("pwd2").val()){
-				alert("비밀번호를 확인해 주십시오.");
-				$("pwd").focus();
-				return false;
-			}
-			
-			
-			
-			
-			
-	
-			
-			
-			
-			
+											if ($("#id").val() == "") {
+												alert("아이디를 꼭 입력하세요!");
+												$("#id").focus();
+												return false;
+											}
 
-		}); // submit() end
+											if ($("#pwd").val() == "") {
+												alert("비밀번호를 꼭 입력하세요!");
+												$("#pwd").focus();
+												return false;
+											}
 
-	}); // ready() end
+											if ($("#pwd2").val() == "") {
+												alert("비밀번호를 꼭 입력하세요!");
+												$("#pwd2").focus();
+												return false;
+											}
+
+											if ($("#pwd").val() != $("#pwd2")
+													.val()) {
+												alert("비밀번호가 일치하지 않습니다.");
+												$("#pwd2").val("");
+												$("pwd2").focus();
+												return false;
+											}
+
+											if ($("#name").val() == "") {
+												alert("이름을 꼭 입력하세요!");
+												$("#name").focus();
+												return false;
+											}
+
+											if ($.trim($("#tel1").val()) == "") {
+												alert("전화번호를 꼭 입력하세요!");
+												$("#tel1").focus();
+												return false;
+											}
+
+											if ($("#tel2").val() == "") {
+												alert("전화번호를 꼭 입력하세요!");
+												$("#tel2").focus();
+												return false;
+											}
+											if ($("#tel3").val() == "") {
+												alert("전화번호를 꼭 입력하세요!");
+												$("#tel3").focus();
+												return false;
+											}
+
+											if (!tel1_pattern.test($("#tel1")
+													.val())) {
+												alert("010,011,016,017,018,019만 가능합니다.");
+												$("#tel1").val("");
+												$("#tel1").focus();
+												return false;
+											}
+
+											if ($("#tel3").val().length != 4) {
+												alert("4개의 숫자로 입력하세요.");
+												$("#tel3").val("");
+												$("#tel3").focus();
+												return false;
+											}
+
+											if (isNAN($("#tel3").val())) {
+												alert("4개의 숫자로 입력하세요.");
+												$("#tel3").val("");
+												$("#tel3").focus();
+												return false;
+											}
+
+											alert("ok");
+
+										}); // submit() end
+
+					}); // ready() end
 </script>
 </head>
 

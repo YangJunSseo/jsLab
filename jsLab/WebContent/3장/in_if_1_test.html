@@ -14,22 +14,16 @@
   var user_pw=prompt("비밀번호는?","");
   
   if(id==user_id){ // 아이디가 일치했을 경우
-  
-     
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-  }else{ // 아이디가 일치하지 않을 경우
-  
-  
-  
+	  if(pw == user_pw) {
+		  document.write(user_id+"님 반갑습니다!");
+	  }else{
+		  alert("비밀번호가 일치하지 않습니다.");	// 팝업 윈도우즈를 띄운다.
+		  location.reload(); // 브라우저에서 새로 고침 기능을 실행한다.
+	  
+			  }
+ 	 }else{ // 아이디가 일치하지 않을 경우
+ 		 alert("아이디가 일치하지 않습니다.");
+		  location.reload();
   
   } //바깥 if문의 else문 종료
 //]]>

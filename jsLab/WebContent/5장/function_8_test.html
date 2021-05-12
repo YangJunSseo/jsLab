@@ -10,6 +10,10 @@ function testFnc(){
    num++; //num의 데이터가 1씩 증가됩니다.
    document.write(num, "<br />");
    
+   if(num==10) return;
+   
+   testFnc();
+   
    
    
    
